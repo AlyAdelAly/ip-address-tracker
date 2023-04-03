@@ -50,7 +50,7 @@ function App() {
                 </div>
                 <div className="flex flex-col justify-center items-center sm:py-2 md:py-2 lg:items-start px-6">
                   <h1 className="text-slate-500 text-sm mb-2">LOCATION</h1>
-                  <h2 className="text-xl text-black">{location.location?.region}, {location.location?.country}</h2>
+                  <h2 className="text-xl text-black">{location.location?.city}, {location.location?.region}, {location.location?.country}</h2>
                 </div>
                 <div className="flex flex-col justify-center items-center sm:py-2 md:py-2 lg:items-start px-6">
                   <h1 className="text-slate-500 text-sm mb-2">TIMEZONE</h1>
