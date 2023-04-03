@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import "leaflet/dist/leaflet.css";
-import iconMarker from 'leaflet/dist/images/marker-icon.png'
-import { TileLayer, MapContainer, Marker, Popup, } from 'react-leaflet';
-import { Icon } from 'leaflet';
+import { TileLayer, MapContainer } from 'react-leaflet';
 import axios from 'axios';
+import MarkerLocation from "./component/markerLocation";
 
 
-function App() {
+const App = () => {
 
   const [position, setPosition] = useState([30.00944 , 31.20861]);
   const [location, setLocation] = useState([]);
@@ -27,10 +26,6 @@ function App() {
     setPosition([res.data.location.lat, res.data.location.lng]);
   }
 
-  const customIcon = new Icon({
-    iconUrl: iconMarker,
-    iconSize: [30, 35]
-  })
 
   return (
     <div>
@@ -66,16 +61,12 @@ function App() {
         }
       </div>
       <div>
-        <MapContainer center={position} zoom={13} scrollWheelZoom={true}  className='h-[100vh]'>
+        <MapContainer center={position} zoom={12} scrollWheelZoom={true} className='h-[100vh]'>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={position} icon={customIcon}>
-            <Popup>
-              {location && location.location?.region}, {location.location?.country}
-            </Popup>
-          </Marker>
+          <MarkerLocation location={position} region={location.location?.region} city={location.location?.city} />
         </MapContainer>
       </div>
 
