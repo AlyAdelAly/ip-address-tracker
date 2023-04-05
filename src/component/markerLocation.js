@@ -5,7 +5,7 @@ import { Icon } from 'leaflet';
 
 const MarkerLocation = ({ location, region, city }) => {
     const map = useMap();
-    if (location) map.flyTo(location, 12);
+    if (location) map.flyTo(location, 18);
   
     const customIcon = new Icon({
       iconUrl: iconMarker,
