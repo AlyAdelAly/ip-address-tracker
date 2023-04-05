@@ -50,22 +50,22 @@ const App = () => {
           <div>
             {
               showAddressResults &&
-              <div className='flex flex-col lg:flex-row bg-slate-200 mb-4 rounded-lg w-96 md:w-auto p-10 justify-center items-center'>
-                <div className="flex flex-col justify-center items-center sm:py-2 md:py-2 lg:items-start lg:px-6">
-                  <h1 className="text-slate-500 text-sm mb-2">IP ADDRESS</h1>
-                  <h2 className="text-xl text-black">{location.ip}</h2>
+              <div className='flex flex-col lg:flex-row bg-slate-200 mb-4 rounded-lg w-72 lg:w-auto md:w-auto p-5 lg:p-10 justify-center items-center'>
+                <div className="flex flex-col justify-center items-center py-2 md:py-2 lg:items-start lg:px-6">
+                  <h1 className="text-slate-500 text-xs md:text-sm lg:text-sm mb-2">IP ADDRESS</h1>
+                  <h2 className="text-sm text-black md:text-lg lg:text-xl">{location.ip}</h2>
                 </div>
-                <div className="flex flex-col justify-center items-center sm:py-2 md:py-2 lg:items-start px-6">
-                  <h1 className="text-slate-500 text-sm mb-2">LOCATION</h1>
-                  <h2 className="text-xl text-black">{location.location?.city}, {location.location?.region}</h2>
+                <div className="flex flex-col justify-center items-center py-2 md:py-2 lg:items-start px-6">
+                  <h1 className="text-slate-500 text-xs md:text-sm lg:text-sm mb-2">LOCATION</h1>
+                  <p className="text-sm text-black md:text-lg lg:text-xl">{location.location?.city}, {location.location?.region}</p>
                 </div>
-                <div className="flex flex-col justify-center items-center sm:py-2 md:py-2 lg:items-start px-6">
-                  <h1 className="text-slate-500 text-sm mb-2">TIMEZONE</h1>
-                  <h2 className="text-xl text-black">{location.location?.country}{location.location?.timezone}</h2>
+                <div className="flex flex-col justify-center items-center py-2 md:py-2 lg:items-start px-6">
+                  <h1 className="text-slate-500 text-xs md:text-sm lg:text-sm mb-2">TIMEZONE</h1>
+                  <h2 className="text-sm text-black md:text-lg lg:text-xl">{location.location?.country}{location.location?.timezone}</h2>
                 </div>
-                <div className="flex flex-col justify-center items-center sm:py-2 md:py-2 lg:items-start px-6">
-                  <h1 className="text-slate-500 text-sm mb-2">ISP</h1>
-                  <h2 className="text-xl text-black">{location.isp}</h2>
+                <div className="flex flex-col justify-center items-center py-2 md:py-2 lg:items-start px-6">
+                  <h1 className="text-slate-500 text-xs md:text-sm lg:text-sm mb-2">ISP</h1>
+                  <h2 className="text-sm text-black md:text-lg lg:text-xl">{location.isp}</h2>
                 </div>
               </div>
             }
